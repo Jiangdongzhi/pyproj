@@ -30,7 +30,7 @@ class LeetcodeProblems(object):
             for url in re.findall(r'<a href="(/problems/.+?)"', cmt)]
         levels = re.findall(r"<td value='\d*'>(.+?)</td>", cmt)
         tinfos = zip(indexs, levels, problem_urls)
-        assert (len(indexes) == len(problem_urls) = len(levels))
+        assert (len(indexs) == len(problem_urls) == len(levels))
         infos = []
         for info in tinfos:
             res = requests.get(info[-1])
@@ -72,9 +72,9 @@ class LeetcodeProblems(object):
                 else:
                     key = 'index'
 
-                infos = sorted(pm_infos, key=Lambda i: i[key])
+                infos = sorted(pm_infos, key=lambda i: i[key])
 
-                text_templates = '## {index} - {title}\n' \
+                text_template = '## {index} - {title}\n' \
                 '~{level}~ {tags}\n' \
                 '{description}\n' + '\n' * self.args.line
 
