@@ -1,11 +1,12 @@
 import sys
 import re
 import os
+from typing import List
 
 class Solution:
-    def twoSum(self, nums, target):
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         comps = []
-        res = []
+        res : List[int] = []
 
         for item in nums:
             comps.append(target - item)
