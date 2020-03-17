@@ -25,5 +25,5 @@ if __name__ == '__main__':
 
     output = sol.twoSum([1, 2, 3, 4], 6)
 
-    print output
+    print(output)
 
